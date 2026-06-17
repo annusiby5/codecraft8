@@ -12,11 +12,13 @@ body{
     align-items:center;
     background:linear-gradient(
         135deg,
-        #0f172a,
-        #1e293b,
-        #312e81
+        #000000,
+        #000000,
+        #000000,
+        #000000
     );
     overflow:hidden;
+    position:relative;
 }
 
 .background{
@@ -28,7 +30,8 @@ body{
 .circle{
     position:absolute;
     border-radius:50%;
-    background:rgba(255,255,255,0.08);
+    background:rgba(239,68,68,0.12);
+    box-shadow:0px 5px 20px rgba(185,28,28,0.35);
     animation:float 8s infinite ease-in-out;
 }
 
@@ -48,11 +51,16 @@ body{
 }
 
 @keyframes float{
-    0%,100%{transform:translateY(0);}
-    50%{transform:translateY(-25px);}
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-25px);
+    }
 }
 
 .card{
+    position:relative;
     width:90%;
     max-width:800px;
     padding:50px;
@@ -60,11 +68,20 @@ body{
     border-radius:25px;
     background:rgba(255,255,255,0.08);
     backdrop-filter:blur(20px);
-    border:1px solid rgba(255,255,255,0.15);
+    border:1px solid rgba(239,68,68,0.25);
     color:white;
     z-index:10;
     animation:fadeIn 1s ease;
-    box-shadow:0 15px 40px rgba(0,0,0,0.3);
+    box-shadow:0 15px 40px rgba(185, 28, 28, 0.358);
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    inset:-2px;
+    border-radius:25px;
+    background:rgba(239,68,68,0.12);
+    z-index:-1;
 }
 
 @keyframes fadeIn{
@@ -82,10 +99,18 @@ body{
     font-size:2.5rem;
     font-weight:700;
     margin-bottom:10px;
+    background:linear-gradient(
+        90deg,
+        #ff6b6b,
+        #ff8787,
+        #ffd6d6
+    );
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 }
 
 .date{
-    color:#cbd5e1;
+    color:#fecaca;
     margin-bottom:30px;
 }
 
@@ -94,6 +119,7 @@ body{
     line-height:1.8;
     font-weight:300;
     margin-bottom:35px;
+    color:#ffe4e6;
 }
 
 .emoji{
@@ -114,8 +140,9 @@ body{
 button{
     background:linear-gradient(
         135deg,
-        #f59e0b,
-        #ef4444
+        #dc2626,
+        #ef4444,
+        #f87171
     );
     color:white;
     border:none;
@@ -123,17 +150,35 @@ button{
     border-radius:50px;
     font-size:1rem;
     cursor:pointer;
-    transition:0.3s;
+    transition:all 0.3s ease;
     font-weight:600;
 }
 
 button:hover{
-    transform:translateY(-4px);
-    box-shadow:0 10px 25px rgba(245,158,11,.4);
+    transform:translateY(-4px) scale(1.05);
+    box-shadow:0 10px 30px rgba(239,68,68,0.5);
 }
 
 .footer{
     margin-top:25px;
-    color:#94a3b8;
+    color:#fca5a5;
     font-size:0.9rem;
+}
+
+@media(max-width:768px){
+    .card{
+        padding:35px 25px;
+    }
+
+    .title{
+        font-size:2rem;
+    }
+
+    .quote{
+        font-size:1.4rem;
+    }
+
+    .emoji{
+        font-size:3rem;
+    }
 }
