@@ -1,0 +1,139 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(
+        135deg,
+        #0f172a,
+        #1e293b,
+        #312e81
+    );
+    overflow:hidden;
+}
+
+.background{
+    position:absolute;
+    width:100%;
+    height:100%;
+}
+
+.circle{
+    position:absolute;
+    border-radius:50%;
+    background:rgba(255,255,255,0.08);
+    animation:float 8s infinite ease-in-out;
+}
+
+.circle:nth-child(1){
+    width:250px;
+    height:250px;
+    top:10%;
+    left:10%;
+}
+
+.circle:nth-child(2){
+    width:180px;
+    height:180px;
+    bottom:15%;
+    right:15%;
+    animation-delay:2s;
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-25px);}
+}
+
+.card{
+    width:90%;
+    max-width:800px;
+    padding:50px;
+    text-align:center;
+    border-radius:25px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,0.15);
+    color:white;
+    z-index:10;
+    animation:fadeIn 1s ease;
+    box-shadow:0 15px 40px rgba(0,0,0,0.3);
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.title{
+    font-size:2.5rem;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+.date{
+    color:#cbd5e1;
+    margin-bottom:30px;
+}
+
+.quote{
+    font-size:1.8rem;
+    line-height:1.8;
+    font-weight:300;
+    margin-bottom:35px;
+}
+
+.emoji{
+    font-size:4rem;
+    margin-bottom:20px;
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+    0%,100%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.15);
+    }
+}
+
+button{
+    background:linear-gradient(
+        135deg,
+        #f59e0b,
+        #ef4444
+    );
+    color:white;
+    border:none;
+    padding:14px 30px;
+    border-radius:50px;
+    font-size:1rem;
+    cursor:pointer;
+    transition:0.3s;
+    font-weight:600;
+}
+
+button:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 25px rgba(245,158,11,.4);
+}
+
+.footer{
+    margin-top:25px;
+    color:#94a3b8;
+    font-size:0.9rem;
+}

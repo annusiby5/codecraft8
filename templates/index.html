@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Motivation</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="background">
+    <div class="circle"></div>
+    <div class="circle"></div>
+</div>
+
+<div class="card">
+    <div class="emoji">🚀</div>
+
+    <h1 class="title">Quote of the Day</h1>
+
+    <p class="date">{{ current_date }}</p>
+
+    <div class="quote">
+        "{{ quote }}"
+    </div>
+
+    <button onclick="window.location.reload()">
+        Refresh
+    </button>
+
+    <div class="footer">
+        A new quote unlocks every 24 hours
+    </div>
+</div>
+
+</body>
+</html>
